@@ -4,8 +4,8 @@ void setup() {
 }
 
 void loop() {
+  String s = String("123.45678");
+  Speak(s);
   for (;;) {
-    String s = String("123.45678");
-    Speak(s);
   }
 }
