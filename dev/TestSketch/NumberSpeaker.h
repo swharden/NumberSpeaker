@@ -18,11 +18,10 @@ public:
   }
 
   void play(uint8_t samples[], int length) {
-    // Send each sample to the PWM and delay to achieve 5 kHz
     for (int i = 0; i < length; i++) {
       uint8_t value = pgm_read_byte(&samples[i]);
       *p_OCR = value;
-      delayMicroseconds(200);  // adjust to customize speed
+      delayMicroseconds(200);
     }
   }
 
