@@ -24,7 +24,7 @@ def get_code(ys: np.ndarray, name: str = None, samples_per_line: int = 20):
     name = str(name).upper()
     text = f"const uint8_t AUDIO_SAMPLES_{name}[] PROGMEM = " + "{\n  "
     for i in range(len(ys)):
-        text += f"{ys[i]:0>3}, "
+        text += str(ys[i]).rjust(4)+","
         if i == len(ys) - 1:
             break
         if i % samples_per_line == samples_per_line-1:
@@ -57,7 +57,6 @@ def get_resampled_quantized(mp3_path: pathlib.Path, new_sample_rate: int):
     ys = ys.astype(np.int16)
 
     # trim zeros
-    print(f"Range: [{min(ys)}, {max(ys)}]")
     zero_value = 127
     for i1 in range(len(ys)):
         if ys[i1] != zero_value:
@@ -86,6 +85,8 @@ def generate_header_file(source_folder: str, new_sample_rate: int = 5000):
         all_ys = np.concatenate((all_ys, ys)).astype(np.int16)
         all_code += get_code(ys, mp3_path.stem)
 
+    print(f"TOTAL: {len(all_ys):,} bytes")
+
     code = "/* This source was was generated automatically.\n"
     code += " * See generation code in https://github.com/swharden/NumberSpeaker\n"
     code += " */\n\n"
@@ -93,7 +94,10 @@ def generate_header_file(source_folder: str, new_sample_rate: int = 5000):
     code += "#define NumberSpeakerAudio_h\n\n"
     code += all_code.strip() + "\n\n"
     code += "#endif"
-    pathlib.Path("../TestSketch/NumberSpeakerAudio.h").write_text(code)
+
+    path_here = pathlib.Path(__file__).parent
+    path_code = path_here.joinpath("../TestSketch/NumberSpeakerAudio.h")
+    pathlib.Path(path_code).write_text(code)
 
     play_all(all_ys, new_sample_rate, False)
 
@@ -102,4 +106,6 @@ def generate_header_file(source_folder: str, new_sample_rate: int = 5000):
 
 
 if __name__ == "__main__":
-    generate_header_file("../NumberSets/numbers3")
+    path_here = pathlib.Path(__file__).parent
+    path_mp3s = path_here.joinpath("../NumberSets/numbers3")
+    generate_header_file(path_mp3s)
