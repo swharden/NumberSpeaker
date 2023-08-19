@@ -8,9 +8,20 @@ void setup() {
 
 void loop() {
   for (;;) {
+
+    numberSpeaker.speak("28.432");
+    delay(1000);
+    
+    numberSpeaker.speak("14.253");
+    delay(1000);
+    
+    numberSpeaker.speak("7.040");
+    delay(1000);
+
     for (int i = 0; i < 10; i++) {
       numberSpeaker.speak(i);
-      delay(500);
     }
+    delay(1000);
+
   }
 }
