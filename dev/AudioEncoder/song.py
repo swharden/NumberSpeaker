@@ -79,13 +79,16 @@ def play_quantized_audio(ys, sample_rate):
     ys = ys.astype(np.int16)
     sd.default.samplerate = sample_rate
     sd.play(ys, blocking=True)
-
+    scipy.io.wavfile.write("song2.wav", sample_rate, ys)
 
 if __name__ == "__main__":
-    new_sample_rate = 4000
+    new_sample_rate = 8000
     wav_path = R"C:\Users\scott\Downloads\loop.wav"
     sample_rate, ys = scipy.io.wavfile.read(wav_path)
     ys = get_resampled_quantized(ys, sample_rate, new_sample_rate)
     print(f"size: {len(ys):,} bytes")
-    pathlib.Path("song.h").write_text(get_code(ys))
+
+    pathlib.Path("song1.h").write_text(get_code(ys[:31000]))
+    pathlib.Path("song2.h").write_text(get_code(ys[31000:]))
+
     play_quantized_audio(ys, new_sample_rate)
