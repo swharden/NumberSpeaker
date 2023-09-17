@@ -1,13 +1,12 @@
-name: Lint and Compile
+name: CI
 on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: arduino/arduino-lint-action@v1
-  compile:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: arduino/compile-sketches@v1
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
+      - name: 🧐 Lint
+        uses: arduino/arduino-lint-action@v1
+      - name: ⚙️ Compile
+        uses: arduino/compile-sketches@v1
