@@ -1,7 +1,7 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
@@ -10,5 +10,10 @@ jobs:
         uses: arduino/arduino-lint-action@v1
         with:
           library-manager: update
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
       - name: ⚙️ Compile
         uses: arduino/compile-sketches@v1
