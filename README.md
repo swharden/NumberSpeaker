@@ -1,5 +1,7 @@
 # NumberSpeaker
 
+[![CI](https://github.com/swharden/NumberSpeaker/actions/workflows/arduino.yaml/badge.svg)](https://github.com/swharden/NumberSpeaker/actions/workflows/arduino.yaml)
+
 **NumberSpeaker is an Arduino library for reading numbers using a speaker.** A human voice from WAV files is encoded into bytes which are stored in program memory and played back using PWM to drive a speaker.
 
 ⚠️ WARNING: This project is pre-alpha and not yet intended for public use
