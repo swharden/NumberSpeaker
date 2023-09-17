@@ -8,5 +8,9 @@ jobs:
         uses: actions/checkout@v3
       - name: 🧐 Lint
         uses: arduino/arduino-lint-action@v1
+        with: 
+          verbose: true
       - name: ⚙️ Compile
         uses: arduino/compile-sketches@v1
+        with: 
+          verbose: true
