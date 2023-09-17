@@ -1,3 +1,8 @@
+/* Values stored in the arrays in this file were generated automatically.
+ * Source code used to generate these values can be found at:
+ * https://github.com/swharden/NumberSpeaker
+ */
+ 
 #include "NumberSpeaker.h"
 
 NumberSpeaker::NumberSpeaker() {}
@@ -86,53 +91,6 @@ void NumberSpeaker::speak_error() {
   delay(7);
   tone(120, 50);
 }
-
-void NumberSpeaker::speak_point() {
-  play(AUDIO_SAMPLES_POINT, sizeof(AUDIO_SAMPLES_POINT));
-}
-
-void NumberSpeaker::speak_digit(uint8_t digit) {
-  switch (digit) {
-    case 0:
-      play(AUDIO_SAMPLES_0, sizeof(AUDIO_SAMPLES_0));
-      break;
-    case 1:
-      play(AUDIO_SAMPLES_1, sizeof(AUDIO_SAMPLES_1));
-      break;
-    case 2:
-      play(AUDIO_SAMPLES_2, sizeof(AUDIO_SAMPLES_2));
-      break;
-    case 3:
-      play(AUDIO_SAMPLES_3, sizeof(AUDIO_SAMPLES_3));
-      break;
-    case 4:
-      play(AUDIO_SAMPLES_4, sizeof(AUDIO_SAMPLES_4));
-      break;
-    case 5:
-      play(AUDIO_SAMPLES_5, sizeof(AUDIO_SAMPLES_5));
-      break;
-    case 6:
-      play(AUDIO_SAMPLES_6, sizeof(AUDIO_SAMPLES_6));
-      break;
-    case 7:
-      play(AUDIO_SAMPLES_7, sizeof(AUDIO_SAMPLES_7));
-      break;
-    case 8:
-      play(AUDIO_SAMPLES_8, sizeof(AUDIO_SAMPLES_8));
-      break;
-    case 9:
-      play(AUDIO_SAMPLES_9, sizeof(AUDIO_SAMPLES_9));
-      break;
-    default:
-      speak_error();
-      break;
-  }
-}
-
-/* The following was generated automatically.
- * Source code used to generate these values can be found at:
- * https://github.com/swharden/NumberSpeaker
- */
 
 const uint8_t AUDIO_SAMPLES_0[] PROGMEM = {
    129, 129, 130, 130, 130, 130, 129, 128, 127, 126, 124, 123, 123, 122, 123, 124, 126, 127, 128, 129,
@@ -1006,3 +964,45 @@ const uint8_t AUDIO_SAMPLES_POINT[] PROGMEM = {
    125, 130, 125, 128, 132, 127, 134, 125, 129, 129, 123, 135, 125, 135, 129, 123, 129, 122, 129, 128,
    127, 131, 124, 135, 120, 130, 123, 125, 131, 125, 131, 120, 130, 126, 125, 129, 125,
 };
+
+void NumberSpeaker::speak_point() {
+  play(AUDIO_SAMPLES_POINT, sizeof(AUDIO_SAMPLES_POINT));
+}
+
+void NumberSpeaker::speak_digit(uint8_t digit) {
+  switch (digit) {
+    case 0:
+      play(AUDIO_SAMPLES_0, sizeof(AUDIO_SAMPLES_0));
+      break;
+    case 1:
+      play(AUDIO_SAMPLES_1, sizeof(AUDIO_SAMPLES_1));
+      break;
+    case 2:
+      play(AUDIO_SAMPLES_2, sizeof(AUDIO_SAMPLES_2));
+      break;
+    case 3:
+      play(AUDIO_SAMPLES_3, sizeof(AUDIO_SAMPLES_3));
+      break;
+    case 4:
+      play(AUDIO_SAMPLES_4, sizeof(AUDIO_SAMPLES_4));
+      break;
+    case 5:
+      play(AUDIO_SAMPLES_5, sizeof(AUDIO_SAMPLES_5));
+      break;
+    case 6:
+      play(AUDIO_SAMPLES_6, sizeof(AUDIO_SAMPLES_6));
+      break;
+    case 7:
+      play(AUDIO_SAMPLES_7, sizeof(AUDIO_SAMPLES_7));
+      break;
+    case 8:
+      play(AUDIO_SAMPLES_8, sizeof(AUDIO_SAMPLES_8));
+      break;
+    case 9:
+      play(AUDIO_SAMPLES_9, sizeof(AUDIO_SAMPLES_9));
+      break;
+    default:
+      speak_error();
+      break;
+  }
+}
