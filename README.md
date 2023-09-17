@@ -9,9 +9,14 @@
 ![](dev/arduino-speaker.jpg)
 
 ## Quickstart
+* Connect a speaker to `pin 11`
+* Open the Arduino IDE and create a new sketch
+* Press `CTRL+SHIFT+i` to open the library manager
+* Search for `NumberSpeaker` and select `Install`
+* Paste the following into your sketch
 
 ```cpp
-#include "NumberSpeaker.h"
+#include <NumberSpeaker.h>
 
 NumberSpeaker numberSpeaker = NumberSpeaker();
 
