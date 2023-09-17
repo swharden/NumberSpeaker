@@ -1,0 +1,10 @@
+# Syntax Coloring Map For ExampleLibrary
+
+# Datatypes (KEYWORD1)
+NumberSpeaker    KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+speak_int KEYWORD2
+speak_float KEYWORD2
+speak_string KEYWORD2
+speak_char KEYWORD2
