@@ -1,27 +1,26 @@
 #include "NumberSpeaker.h"
 
-NumberSpeaker numberSpeaker = NumberSpeaker();
+NumberSpeaker numberSpeaker = NumberSpeaker();  // speaker on pin 11
 
 void setup() {
   numberSpeaker.begin();
 }
 
 void loop() {
-  for (;;) {
 
-    numberSpeaker.speak("28.432");
-    delay(1000);
-    
-    numberSpeaker.speak("14.253");
-    delay(1000);
-    
-    numberSpeaker.speak("7.040");
-    delay(1000);
+  numberSpeaker.speak_int(1234567);
+  delay(500);
 
-    for (int i = 0; i < 10; i++) {
-      numberSpeaker.speak(i);
-    }
-    delay(1000);
+  numberSpeaker.speak_float(123.4567);
+  delay(500);
 
-  }
+  numberSpeaker.speak_string("69.420.42");
+  delay(500);
+
+  numberSpeaker.speak_char('6');
+  numberSpeaker.speak_char('.');
+  numberSpeaker.speak_char('9');
+  delay(500);
+
+  for (;;) {}
 }
