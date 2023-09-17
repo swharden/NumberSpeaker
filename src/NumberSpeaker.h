@@ -2,7 +2,6 @@
 #define NumberSpeaker_h
 
 #include "Arduino.h"
-#include "NumberSpeakerAudio.h"
 
 /*!
  * Class that manages speaking numbers using audio on a PWM output pin
