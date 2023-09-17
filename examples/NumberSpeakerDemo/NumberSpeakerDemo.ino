@@ -1,9 +1,9 @@
 #include "NumberSpeaker.h"
 
-NumberSpeaker numberSpeaker = NumberSpeaker();  // speaker on pin 11
+NumberSpeaker numberSpeaker = NumberSpeaker();
 
 void setup() {
-  numberSpeaker.begin();
+  numberSpeaker.begin();  // speaker on pin 11
 }
 
 void loop() {
