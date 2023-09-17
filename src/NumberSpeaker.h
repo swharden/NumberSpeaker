@@ -44,4 +44,16 @@ private:
   void speak_digit(uint8_t digit);
 };
 
+extern const uint8_t AUDIO_SAMPLES_0[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_1[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_2[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_3[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_4[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_5[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_6[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_7[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_8[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_9[] PROGMEM;
+extern const uint8_t AUDIO_SAMPLES_POINT[] PROGMEM;
+
 #endif
